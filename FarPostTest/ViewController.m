@@ -155,15 +155,14 @@
     [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
 
     CollectionViewCell *cell = (CollectionViewCell*) [self.collectionView cellForItemAtIndexPath:indexPath];
-    if (cell == nil) {
-        return;
-    }
-    if (cell.imageView.image == nil) {
+    if (cell == nil || cell.imageView.image == nil) {
         return;
     }
 
+    // Animate the cell to the right
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         cell.transform = CGAffineTransformTranslate(cell.transform, self.view.frame.size.width, 0);
+        cell.alpha = 0;
     } completion: ^(BOOL finished) {
         NSLog(@"%@", [self.data objectAtIndex:indexPath.row].url);
         [self.data removeObjectAtIndex:indexPath.row];

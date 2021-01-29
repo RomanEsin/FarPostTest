@@ -54,7 +54,7 @@
         [[self.imageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
 
         // Create activity indicator to see when the image is loading
-        self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [self.activityIndicator setTranslatesAutoresizingMaskIntoConstraints:NO];
         //    [self.activityIndicator setHidesWhenStopped:NO];
         //    [self.activityIndicator setBackgroundColor:UIColor.redColor];
